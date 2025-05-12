@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Analyzer</h1>
+        <p>Upload your resume to get detailed feedback and improvement suggestions</p>
+        
+        <div class="upload-container">
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="resume" name="resume" accept=".pdf,.docx" required>
+                <label for="resume" class="upload-btn">
+                    <i class="fas fa-cloud-upload-alt"></i> Choose File
+                </label>
+                <button type="submit" class="analyze-btn">Analyze Resume</button>
+            </form>
+        </div>
+        
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing your resume...</p>
+        </div>
+        
+        <div id="results" class="results-container" style="display: none;">
+            <h2>Analysis Results</h2>
+            
+            <div class="overall-score">
+                <div class="score-circle">
+                    <span id="totalScore">0</span>
+                </div>
+                <div class="score-text">
+                    <h3 id="overallRating">Overall Rating</h3>
+                    <p id="overallFeedback">Your resume analysis results will appear here</p>
+                </div>
+            </div>
+            
+            <div class="section-scores">
+                <h3>Detailed Breakdown</h3>
+                <div id="sectionScores" class="scores-grid">
+                    <!-- Sections will be added here dynamically -->
+                </div>
+            </div>
+            
+            <div class="suggestions">
+                <h3>Suggestions for Improvement</h3>
+                <ul id="suggestionsList">
+                    <!-- Suggestions will be added here dynamically -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
