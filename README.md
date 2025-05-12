@@ -1,4 +1,5 @@
-# resume
+# resume analyzer
+
 resume_analyzer/
 │
 ├── app.py                # Flask backend
